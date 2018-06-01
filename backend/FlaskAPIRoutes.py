@@ -10,20 +10,5 @@ APIroutes = [adhocTestOne]
 def adhocktestroute():
 	c = request.args.get('c')
 	t = request.args.get('t')
-	if t == "json":
-		blogTemplate = bbto.getBlogArticle(c)
-		return render_template('blogs/blog_template_json.html',blogContent=blogTemplate,article=c)
-	if t == "html":
-		try:
-			blogTemplate = bbto.getJupyterBlog(c)
-		except:
-			try:
-				c = c.replace(" ","+")
-				blogTemplate = bbto.getJupyterBlog(c)
-			except:
-				return c + " is an invalid blog article."
-		article = c.replace("blog/","")
-		article = article.replace(".html","")
-		return render_template('blogs/blog_template_jpyter.html',blogContent=blogTemplate,article=article)
-	return "invalid blog type (t)"
+	return "The arguments are c:" + str(c) + " and t:" + str(t) 
 
