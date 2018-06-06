@@ -1,3 +1,8 @@
+import yaml,os
+import pymssql
+
+myKeys = yaml.load(open("key2file")
+
 def getCursor():
         conn = pymssql.connect(server=DBServer, user=DBAccessUser, password=DBAccessPassword, database=DBDatabase)  
         cursor = conn.cursor()  
