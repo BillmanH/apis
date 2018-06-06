@@ -12,7 +12,7 @@ APIroutes = [adhocTestOne]
 def adhocktestroute():
 	if "UserID" in request.cookies:
 		if request.cookies["UserID"] == "testCookie":
-			return "User Accepted" + str(os.getcwd())
+			return "User Accepted" + str(az.getYesterdaysTransactions())
 		else: return (str(request.cookies))
 	else:
 		return "This user is not accepted"

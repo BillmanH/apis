@@ -1,10 +1,10 @@
 import yaml,os
 import pymssql
 
-myKeys = yaml.load(open("key2file")
+myKeys = yaml.load(open("/home/ubuntu/flaskapp/templates/apis/key2file"))
 
 def getCursor():
-        conn = pymssql.connect(server=DBServer, user=DBAccessUser, password=DBAccessPassword, database=DBDatabase)  
+        conn = pymssql.connect(server=myKeys['DBServer'], user=myKeys['DBAccessUser'], password=myKeys['DBAccessPassword'], database=myKeys['DBDatabase'])  
         cursor = conn.cursor()  
         return cursor, conn
 
